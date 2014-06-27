@@ -39,7 +39,7 @@ gem 'sync'
 
 # authentication and authorization
 gem 'devise', '~> 3.2.2'
-gem 'simple_token_authentication'
+gem 'simple_token_authentication', git: 'https://github.com/vaxinate/simple_token_authentication.git'
 #gem 'devise_invitable', :github => 'scambra/devise_invitable'
 gem 'omniauth'
 #gem 'omniauth-linkedin-oauth2'
