@@ -1,0 +1,33 @@
+# Faye
+development:
+  server: "http://localhost:3000/faye"
+  adapter_javascript_url: "http://localhost:3000/faye/client.js"
+  auth_token: diqu8ly3kert2gho5kerh8wipi4ra7nu
+  adapter: "Faye"
+  async: true
+
+# Pusher
+# development:
+#   adapter_javascript_url: "http://js.pusher.com/2.0/pusher.min.js"
+#   app_id: "YOUR_PUSHER_APP_ID"
+#   api_key: "YOUR_PUSHER_API_KEY"
+#   auth_token: "YOUR_PUSHER_SECRET"
+#   adapter: "Pusher"
+#   async: true
+
+test:
+  server: "http://localhost:3001/faye"
+  adapter_javascript_url: "http://localhost:3001/faye/client.js"
+  adapter: "Faye"
+  auth_token: "secret"
+  async: false
+
+staging:
+  server: "http://therighttable.herokuapp.com/faye"
+
+production:
+  server: "http://mobstreams.herokuapp.com/faye"
+  adapter_javascript_url: "http://mobstreams.herokuapp.com/faye/client.js"
+  adapter: "Faye"
+  auth_token: "4efcef54284b5e0084fd533e7cc751772d58f0ee3d9aea7bc8991a9c0aec37c3"
+  async: true

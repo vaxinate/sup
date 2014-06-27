@@ -1,0 +1,50 @@
+// Provide reasonable typographic defaults for body text
+
+@import "theme";
+
+@function pow($base, $exponent) {
+  // reset value
+  $value: $base;
+  // positive intergers get multiplied
+  @if $exponent > 1 {
+    @for $i from 2 through $exponent {
+      $value: $value * $base;
+    }
+  }
+  // negitive intergers get divided. A number divided by itself is 1
+  @if $exponent < 1 {
+    @for $i from 0 through -$exponent {
+      $value: $value / $base;
+    }
+  }
+  // return the last value written
+  @return ($value);
+}
+
+$p-max-width: 28rem;
+
+body {
+  font-family: $font-family-sans-serif;
+  line-height: $line-height-base*1em;
+}
+
+p {
+  margin: 0 0 $line-height-base*1rem;
+  max-width: $p-max-width;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    max-width: $p-max-width;
+    // Double the font size between h6/baseline and h1
+    // Why? Big headings are gross
+    // http://practicaltypography.com/point-size.html
+    font-size: 1rem * pow(1.148698355, 6 - $i);
+    // Snap the line heights to increments of the base line height while preventing
+    // overlapping headers. This makes things look better
+    line-height: floor(pow(1.148698355, 6 - $i)/$line-height-base)*$line-height-base*1rem;
+    // Keep headers close to the paragraphs which they are labeling, but provide
+    // whitespace above to seperate sections
+    margin: $line-height-base * 1rem 0 0 0;
+  }
+}

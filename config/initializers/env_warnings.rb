@@ -1,0 +1,17 @@
+KEYS_TO_SET = [
+  'MANDRILL_USERNAME',
+  'MANDRILL_APIKEY',
+  'AWS_ACCESS_KEY_ID',
+  'AWS_SECRET_ACCESS_KEY',
+  'S3_BUCKET_NAME',
+  'GOOGLE_ANALYTICS_SITE_KEY',
+  'MANDRILL_SENDER',
+  'SECRET_TOKEN',
+  'DEVISE_SECRET_KEY'
+]
+
+KEYS_TO_SET.each do |key|
+  if !ENV.has_key?(key)
+    puts "WARNING: ENV key #{key} is not set"
+  end
+end
