@@ -7,6 +7,6 @@ RailsBoilerplate::Application.routes.draw do
   #ActiveAdmin.routes(self)
 
   authenticated :user do
-    # For logged in users-- probably put a logged in root page here
+    resources :sups
   end
 end
