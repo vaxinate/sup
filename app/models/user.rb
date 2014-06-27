@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :registerable,
          :omniauthable
 
+  acts_as_token_authenticatable # devise friendly token auth
   acts_as_followable
   acts_as_follower
   acts_as_messageable
